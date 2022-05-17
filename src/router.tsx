@@ -6,6 +6,7 @@ import SidebarLayout from 'src/layouts/SidebarLayout';
 import BaseLayout from 'src/layouts/BaseLayout';
 
 import SuspenseLoader from 'src/components/SuspenseLoader';
+import Callback from './callback/Callback';
 
 const Loader = (Component) => (props) => (
   <Suspense fallback={<SuspenseLoader />}>
@@ -33,7 +34,6 @@ const UserSettings = Loader(lazy(() => import('src/content/applications/Users/se
 const Buttons = Loader(lazy(() => import('src/content/pages/Components/Buttons')));
 const Modals = Loader(lazy(() => import('src/content/pages/Components/Modals')));
 const Accordions = Loader(lazy(() => import('src/content/pages/Components/Accordions')));
-const Patients = Loader(lazy(() => import('src/content/pages/Components/Patients')));
 const Tabs = Loader(lazy(() => import('src/content/pages/Components/Tabs')));
 const Badges = Loader(lazy(() => import('src/content/pages/Components/Badges')));
 const Tooltips = Loader(lazy(() => import('src/content/pages/Components/Tooltips')));
@@ -56,12 +56,11 @@ const routes: PartialRouteObject[] = [
     children: [
       {
         path: '/',
-        element: (
-          <Navigate
-            to="/components"
-            replace
-          />
-        )
+        element: <Overview />
+      },
+      {
+        path: 'login/callback',
+        element: <Callback />
       },
       {
         path: 'overview',
@@ -72,6 +71,7 @@ const routes: PartialRouteObject[] = [
           />
         )
       },
+
       {
         path: 'status',
         children: [
@@ -118,7 +118,7 @@ const routes: PartialRouteObject[] = [
         path: '/',
         element: (
           <Navigate
-            to="/components"
+            to="/dashboards/crypto"
             replace
           />
         )
@@ -186,7 +186,7 @@ const routes: PartialRouteObject[] = [
         path: '/',
         element: (
           <Navigate
-            to="/components/patients"
+            to="/components/buttons"
             replace
           />
         )
@@ -198,10 +198,6 @@ const routes: PartialRouteObject[] = [
       {
         path: 'modals',
         element: <Modals />
-      },
-      {
-        path: 'patients',
-        element: <Patients />
       },
       {
         path: 'accordions',
