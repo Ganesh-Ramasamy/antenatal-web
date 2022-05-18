@@ -15,15 +15,10 @@ import {
 
 import { styled } from '@mui/material/styles';
 import TrendingUp from '@mui/icons-material/TrendingUp';
-import AccountBalanceChart from './AccountBalanceChart';
+
 import Text from 'src/components/Text';
 
-const AccountBalanceChartWrapper = styled(AccountBalanceChart)(
-  () => `
-      width: 100%;
-      height: 100%;
-`
-);
+
 const AvatarSuccess = styled(Avatar)(
   ({ theme }) => `
       background-color: ${theme.colors.success.main};
@@ -113,7 +108,7 @@ function AccountBalance() {
                 alignItems="center"
               >
                 <Box style={{ height: '160px' }}>
-                  <AccountBalanceChartWrapper data={cryptoBalance} />
+                  
                 </Box>
               </Grid>
               <Grid xs={12} sm={7} item display="flex" alignItems="center">

@@ -12,9 +12,7 @@ import {
 import { styled } from '@mui/material/styles';
 import ViewWeekTwoToneIcon from '@mui/icons-material/ViewWeekTwoTone';
 import TableRowsTwoToneIcon from '@mui/icons-material/TableRowsTwoTone';
-import WatchListColumn1 from './WatchListColumn1';
-import WatchListColumn2 from './WatchListColumn2';
-import WatchListColumn3 from './WatchListColumn3';
+
 import WatchListRow from './WatchListRow';
 
 const EmptyResultsWrapper = styled('img')(
@@ -68,13 +66,13 @@ function WatchList() {
         {tabs === 'watch_list_columns' && (
           <>
             <Grid item lg={4} xs={12}>
-              <WatchListColumn1 />
+              
             </Grid>
             <Grid item lg={4} xs={12}>
-              <WatchListColumn2 />
+              
             </Grid>
             <Grid item lg={4} xs={12}>
-              <WatchListColumn3 />
+              
             </Grid>
           </>
         )}

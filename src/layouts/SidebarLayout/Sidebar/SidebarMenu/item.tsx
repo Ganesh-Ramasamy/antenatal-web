@@ -57,8 +57,7 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
 
   return (
     <ListItem component="div" key={name} {...rest}>
-      <Button
-        activeClassName="Mui-active"
+      <Button   
         component={RouterLink}
         onClick={toggleSidebar}
         to={link}

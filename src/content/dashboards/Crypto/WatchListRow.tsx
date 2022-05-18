@@ -12,7 +12,7 @@ import {
 import { styled } from '@mui/material/styles';
 import Text from 'src/components/Text';
 import Label from 'src/components/Label';
-import WatchListRowChart from './WatchListRowChart';
+
 
 const AvatarWrapper = styled(Avatar)(
   ({ theme }) => `
@@ -29,11 +29,7 @@ const LabelWrapper = styled(Box)(
 `
 );
 
-const WatchListRowChartWrapper = styled(WatchListRowChart)(
-  ({ theme }) => `
-        height: 100px;
-`
-);
+
 
 function WatchListRow() {
 
@@ -94,10 +90,7 @@ function WatchListRow() {
               </Text>
             </Box>
             <Box height={100} sx={{ ml: -1.5 }}>
-              <WatchListRowChartWrapper
-                data={price.week.bitcoin}
-                labels={price.week.labels}
-              />
+
             </Box>
           </Box>
         </Grid>
@@ -139,10 +132,7 @@ function WatchListRow() {
               </Text>
             </Box>
             <Box height={100} sx={{ ml: -1.5 }}>
-              <WatchListRowChartWrapper
-                data={price.week.ethereum}
-                labels={price.week.labels}
-              />
+
             </Box>
           </Box>
         </Grid>
@@ -184,10 +174,7 @@ function WatchListRow() {
               </Text>
             </Box>
             <Box height={100} sx={{ ml: -1.5 }}>
-              <WatchListRowChartWrapper
-                data={price.week.cardano}
-                labels={price.week.labels}
-              />
+
             </Box>
           </Box>
         </Grid>
