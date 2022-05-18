@@ -21,7 +21,7 @@ function AuthorizationCode(props) {
 
     const getAuthCode = async (pkceState, codeChallenge) => {
         let authorizationUrl = OIC_ENDPOINT + "/auth";
-        authorizationUrl += "?client_id=resource-ui";
+        authorizationUrl += "?client_id=antenatal-web";
         authorizationUrl += "&response_type=code";
         authorizationUrl += "&scope=openid profile email";
         authorizationUrl += "&redirect_uri=" + ROOT_URL + CALLBACK_PATH;

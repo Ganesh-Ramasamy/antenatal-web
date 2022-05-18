@@ -39,7 +39,7 @@ const mapDispatchToProps = dispatch => ({
 
         const body = {
             "grant_type": "authorization_code",
-            "client_id": "resource-ui",
+            "client_id": "antenatal-web",
             "code": authorizationCode,
             "code_verifier": codeVerifier,
             "redirect_uri": ROOT_URL + CALLBACK_PATH
