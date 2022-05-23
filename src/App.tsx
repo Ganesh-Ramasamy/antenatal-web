@@ -3,7 +3,6 @@ import routes from './router';
 import { CALLBACK_PATH } from './constants';
 
 import Callback from './callback/Callback';
-import PKCE from './containers/PKCE';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import ThemeProvider from './theme/ThemeProvider';
@@ -13,10 +12,18 @@ import { CssBaseline } from '@mui/material';
 
 // import ThemeProvider from './theme/ThemeProvider';
 // import { CssBaseline } from '@mui/material';
+import { useKeycloak } from '@react-keycloak/web'
 
 const App = () => {
 
   const content = useRoutes(routes);
+  const { initialized } = useKeycloak()
+
+  if (!initialized) {
+    return <div>Loading...</div>
+  }
+
+  
   console.log('content', content);
   return (
     <ThemeProvider>

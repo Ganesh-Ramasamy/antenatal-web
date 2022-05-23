@@ -1,10 +1,12 @@
 import { FC, ReactNode } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
 
 import Sidebar from './Sidebar';
 import Header from './Header';
+import { useKeycloak } from '@react-keycloak/web'
+import Overview from 'src/content/overview';
 
 interface SidebarLayoutProps {
   children?: ReactNode;
@@ -31,17 +33,32 @@ const MainContent = styled(Box)(
 );
 
 const SidebarLayout: FC<SidebarLayoutProps> = () => {
-  return (
-    <>
-      <Sidebar />
-      <MainWrapper>
-        <Header />
-        <MainContent>
-          <Outlet />
-        </MainContent>
-      </MainWrapper>
-    </>
-  );
+  const { keycloak } = useKeycloak();
+
+  if (keycloak?.authenticated) {
+    return (
+      <>
+        <Sidebar />
+        <MainWrapper>
+          <Header />
+          <MainContent>
+            <Outlet />
+          </MainContent>
+        </MainWrapper>
+      </>
+    );
+  }else{
+    return (
+
+      <Navigate
+            to={{
+              pathname: '/overview'
+            }}
+          />
+
+    );
+  }
+
 };
 
 export default SidebarLayout;

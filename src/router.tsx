@@ -7,6 +7,7 @@ import BaseLayout from 'src/layouts/BaseLayout';
 
 import SuspenseLoader from 'src/components/SuspenseLoader';
 import Callback from './callback/Callback';
+import Patients from './content/pages/Components/Patients';
 
 const Loader = (Component) => (props) => (
   <Suspense fallback={<SuspenseLoader />}>
@@ -190,6 +191,10 @@ const routes: RouteObject[] = [
             replace
           />
         )
+      },
+      {
+        path: 'patients',
+        element: <Patients />
       },
       {
         path: 'buttons',

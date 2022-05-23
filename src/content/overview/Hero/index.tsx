@@ -6,16 +6,12 @@ import {
   Typography
 } from '@mui/material';
 
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, Navigate } from 'react-router-dom';
 
 import { styled } from '@mui/material/styles';
-import PKCEState from 'src/components/PKCEState';
-import PKCECodeVerifier from 'src/components/PKCECodeVerifier';
-import PKCECodeChallenge from 'src/components/PKCECodeChallenge';
-import AuthorizationCode from 'src/components/AuthorizationCode';
-import AccessToken from 'src/components/AccessToken';
-import Resource from 'src/components/Resource';
 import React from 'react';
+import { useKeycloak } from '@react-keycloak/web'
+import { useCallback } from 'react'
 
 const TypographyH1 = styled(Typography)(
   ({ theme }) => `
@@ -84,19 +80,32 @@ const TsAvatar = styled(Box)(
 );
 
 function Hero() {
+  const { keycloak } = useKeycloak();
+  const login = useCallback(() => {
+    keycloak?.login()
+  }, [keycloak])
 
-  return (
-    <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
-          <React.Fragment>
-            <PKCEState></PKCEState>
-            <PKCECodeVerifier></PKCECodeVerifier>
-            <PKCECodeChallenge></PKCECodeChallenge>
-            <AuthorizationCode></AuthorizationCode>
-            <AccessToken></AccessToken>
-            <Resource></Resource> 
-        </React.Fragment>
-    </Container>
-  );
+
+
+  if (keycloak?.authenticated) {
+    console.log("keycloak?.authenticated", keycloak?.authenticated);
+    return (
+      <Navigate
+            to={{
+              pathname: '/components/patients'
+            }}
+          />
+    );
+  }else{
+    return (
+        <div>
+          <button type="button" onClick={login}>
+            Login
+          </button>
+        </div>
+    );
+
+  }
 }
 
 export default Hero;

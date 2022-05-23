@@ -8,23 +8,37 @@ import { Provider } from 'react-redux';
 import 'nprogress/nprogress.css';
 import { SidebarProvider } from './contexts/SidebarContext';
 import { createStore } from 'redux';
-import reducer from './store/reducer'
+import { ReactKeycloakProvider } from '@react-keycloak/web';
 import ReactDOM from "react-dom/client";
-
-const store = createStore(reducer);
+import keycloak from './keycloak'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
+
+const eventLogger = (event: unknown, error: unknown) => {
+  console.log('onKeycloakEvent', event, error)
+}
+
+const tokenLogger = (tokens: unknown) => {
+  console.log('onKeycloakTokens', tokens)
+}
+
 root.render(
-  <Provider store={store}>
+  
     <HelmetProvider>
       <SidebarProvider>
         <BrowserRouter>
-          <App />
+          <ReactKeycloakProvider
+            authClient={keycloak}
+            onEvent={eventLogger}
+            onTokens={tokenLogger}
+          >
+            <App />
+          </ReactKeycloakProvider>
         </BrowserRouter>
       </SidebarProvider>
     </HelmetProvider>
-  </Provider>
+  
 );
 
 serviceWorker.unregister();
