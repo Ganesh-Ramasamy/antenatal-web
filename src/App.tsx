@@ -1,8 +1,7 @@
 import { useRoutes, BrowserRouter, Route, Routes } from 'react-router-dom';
 import routes from './router';
-import { CALLBACK_PATH } from './constants';
 
-import Callback from './callback/Callback';
+
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import ThemeProvider from './theme/ThemeProvider';
@@ -33,20 +32,5 @@ const App = () => {
       </LocalizationProvider>
     </ThemeProvider>
   );
-
-  // return (
-  //   <ThemeProvider>
-  //     <div className="App">
-
-  //       <div className="App-body">
-  //         <Routes>
-  //           <Route path={CALLBACK_PATH} element={ <Callback />} />
-  //           <Route path="/" element={ <PKCE />} />
-  //         </Routes>
-  //       </div>
-  //     </div>
-  //   </ThemeProvider>
-  // );
-  
 }
 export default App;

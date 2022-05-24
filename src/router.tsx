@@ -6,7 +6,6 @@ import SidebarLayout from 'src/layouts/SidebarLayout';
 import BaseLayout from 'src/layouts/BaseLayout';
 
 import SuspenseLoader from 'src/components/SuspenseLoader';
-import Callback from './callback/Callback';
 import Patients from './content/pages/Components/Patients';
 
 const Loader = (Component) => (props) => (
@@ -58,10 +57,6 @@ const routes: RouteObject[] = [
       {
         path: '',
         element: <Overview />
-      },
-      {
-        path: 'login/callback',
-        element: <Callback />
       },
       {
         path: 'overview',

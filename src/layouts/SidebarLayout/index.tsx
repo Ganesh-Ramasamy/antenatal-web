@@ -54,6 +54,7 @@ const SidebarLayout: FC<SidebarLayoutProps> = () => {
             to={{
               pathname: '/overview'
             }}
+            replace
           />
 
     );

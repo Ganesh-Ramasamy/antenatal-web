@@ -94,6 +94,7 @@ function Hero() {
             to={{
               pathname: '/components/patients'
             }}
+            replace
           />
     );
   }else{
