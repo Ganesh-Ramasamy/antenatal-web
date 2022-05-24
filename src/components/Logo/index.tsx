@@ -101,21 +101,25 @@ function Logo() {
 
 
   return (
-    <LogoWrapper to="/overview">
-      <LogoSignWrapper>
-        <LogoSign>
-          <LogoSignInner />
-        </LogoSign>
-      </LogoSignWrapper>
-      <Hidden smDown>
-        <LogoTextWrapper>
-          <Tooltip title="Version 1.1.0" arrow placement="right">
-            <VersionBadge>1.1</VersionBadge>
-          </Tooltip>
-          <LogoText>Tokyo Free White</LogoText>
-        </LogoTextWrapper>
-      </Hidden>
-    </LogoWrapper>
+    // <LogoWrapper to="/overview">
+    //   <LogoSignWrapper>
+    //     <LogoSign>
+    //       <LogoSignInner />
+    //     </LogoSign>
+    //   </LogoSignWrapper>
+    //   <Hidden smDown>
+    //     <LogoTextWrapper>
+    //       <Tooltip title="Version 1.1.0" arrow placement="right">
+    //         <VersionBadge>1.1</VersionBadge>
+    //       </Tooltip>
+    //       <LogoText>Tokyo Free White</LogoText>
+    //     </LogoTextWrapper>
+    //   </Hidden>
+    // </LogoWrapper>
+    <>
+      <img src={'/static/images/logo/dxd_logo.svg'} alt="wind icon" style={{ width: 150, height: 75 }} />
+                 
+    </>
   );
 }
 
