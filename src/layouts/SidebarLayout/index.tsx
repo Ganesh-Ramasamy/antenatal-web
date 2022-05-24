@@ -6,7 +6,7 @@ import { Outlet, Navigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Header';
 import { useKeycloak } from '@react-keycloak/web'
-import Overview from 'src/content/overview';
+
 
 interface SidebarLayoutProps {
   children?: ReactNode;

@@ -23,7 +23,7 @@ const menuItems: MenuItems[] = [
     items: [
       {
         name: 'Patients',
-        link: '/components/patients',
+        link: '/patients',
         icon: PersonIcon
       }
     ]
