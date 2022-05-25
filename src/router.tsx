@@ -24,7 +24,8 @@ const Overview = Loader(lazy(() => import('src/Overview')));
 
 // Components
 const Patients = Loader(lazy(() => import('src/Patients')));
-
+const PatientList = Loader(lazy(() => import('src/Patients/patient-list')));
+const PatientRegister = Loader(lazy(() => import('src/Patients/patient-register')));
 // Status
 
 const Status404 = Loader(lazy(() => import('src/status/Status404')));
@@ -107,7 +108,27 @@ const routes: RouteObject[] = [
       },
       {
         path: 'patients',
-        element: <Patients />
+        element: <Patients />,
+        children: [
+          {
+            path: '',
+            element: (
+              <Navigate
+                to="/patients/list"
+                replace
+              />
+            )
+          },
+          {
+            path: 'list',
+            element: <PatientList />
+          },
+          {
+            path: 'register',
+            element: <PatientRegister />
+          }
+        ]
+
       }
     ]
   }

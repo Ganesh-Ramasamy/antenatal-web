@@ -1,10 +1,23 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Tooltip, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const FooterWrapper = styled(Box)(
   ({ theme }) => `
         border-radius: 0;
         margin: ${theme.spacing(3)} 0;
+`
+);
+
+const VersionBadge = styled(Box)(
+  ({ theme }) => `
+        background: ${theme.palette.success.main};
+        color: ${theme.palette.success.contrastText};
+        padding: ${theme.spacing(0.4, 1)};
+        border-radius: ${theme.general.borderRadiusSm};
+        text-align: center;
+        display: inline-block;
+        line-height: 1;
+        font-size: ${theme.typography.pxToRem(11)};
 `
 );
 
@@ -21,12 +34,13 @@ function Footer() {
         >
           <Box>
             <Typography variant="subtitle1">
-              Antenatal Nurse Portal
+              Antenatal Portal
             </Typography>
           </Box>
-          <Typography sx={{ pt: { xs: 2, md: 0 } }} variant="subtitle1">
-            version: 1.0.0
-          </Typography>
+          <Tooltip title="Version 1.0.0" arrow placement="right">
+            <VersionBadge>1.0.0</VersionBadge>
+          </Tooltip>
+          
         </Box>
       </Container>
     </FooterWrapper>

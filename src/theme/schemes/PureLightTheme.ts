@@ -125,7 +125,7 @@ const colors = {
   }
 };
 
-export const PureLightTheme = createTheme({
+export const DXDPureLightTheme = createTheme({
   // direction: i18n.dir(),
   colors: {
     gradients: {
@@ -230,7 +230,7 @@ export const PureLightTheme = createTheme({
     menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
     boxShadow:
       '2px 0 3px rgba(159, 162, 191, 0.18), 1px 0 1px rgba(159, 162, 191, 0.32)',
-    width: '280px'
+    width: '180px'
   },
   header: {
     height: '88px',
@@ -324,7 +324,7 @@ export const PureLightTheme = createTheme({
       xs: 0,
       sm: 600,
       md: 960,
-      lg: 1280,
+      lg: 1340,
       xl: 1840
     }
   },
