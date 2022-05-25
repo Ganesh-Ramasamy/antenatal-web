@@ -1,13 +1,13 @@
 {
-  "name": "tokyo-free-white-react-admin-dashboard",
-  "version": "1.1.0",
-  "title": "Tokyo Free White React Admin Dashboard",
-  "description": "This free and open source admin dashboard template is built for React and it’s bootstrapped from Facebook’s create-react-app. All NPM dependencies are up to date and it contains multiple fully customized components based on the popular frontend components framework, Material-UI.",
+  "name": "antenatal-web-portal",
+  "version": "1.0.0",
+  "title": "Antenatal web portal",
+  "description": "Antenatal web portal",
   "author": {
-    "name": "BloomUI.com",
-    "url": "https://bloomui.com"
+    "name": "dxdhub",
+    "url": "https://www.dxdhub.sg/"
   },
-  "private": false,
+  "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
